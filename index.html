@@ -1237,6 +1237,96 @@
     @media (max-width: 600px) { .reviews-grid { grid-template-columns: 1fr; } }
 
     /* ============================================
+       TESTIMONIAL CARDS — Platform source style
+    ============================================ */
+    .rv-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 2rem;
+    }
+    .rv-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+    .rv-card:hover { transform: translateY(-4px); box-shadow: 0 14px 36px rgba(26,83,58,0.1); }
+    .rv-platform {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1rem;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .rv-fb { background: #1877F2; color: #fff; }
+    .rv-gg { background: #f8f9fa; color: #3c4043; border-bottom: 1px solid #e8eaed; }
+    .rv-zl { background: #0068FF; color: #fff; }
+    .rv-body { padding: 1.1rem 1.1rem 0.75rem; flex: 1; }
+    .rv-stars { color: #F59E0B; font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 0.55rem; }
+    .rv-text {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      line-height: 1.72;
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+    .rv-author-row { display: flex; align-items: center; gap: 0.65rem; }
+    .rv-avatar {
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.82rem; font-weight: 700; color: #fff; flex-shrink: 0;
+    }
+    .rv-avatar-fb { background: #1877F2; }
+    .rv-avatar-gg { background: #34A853; }
+    .rv-avatar-zl { background: #0068FF; }
+    .rv-author { font-size: 0.8rem; font-weight: 600; color: var(--text-primary); }
+    .rv-date { font-size: 0.68rem; color: var(--text-dim); margin-top: 0.15rem; }
+    .rv-source-link {
+      display: block;
+      padding: 0.6rem 1.1rem;
+      font-size: 0.71rem;
+      color: var(--accent-gold);
+      text-decoration: none;
+      border-top: 1px solid var(--border-subtle);
+      font-weight: 500;
+      transition: background 0.15s ease;
+    }
+    .rv-source-link:hover { background: var(--bg-secondary); }
+    .rv-cta {
+      text-align: center;
+      margin-top: 2.25rem;
+      padding: 1.5rem 2rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+    }
+    .rv-cta p { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0.85rem; }
+    .rv-cta-links { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+    .rv-cta-links a {
+      font-size: 0.8rem;
+      color: var(--accent-gold);
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.45rem 1.1rem;
+      border: 1px solid var(--border-gold);
+      border-radius: 20px;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+    .rv-cta-links a:hover { background: var(--accent-gold); color: var(--bg-primary); }
+
+    @media (max-width: 1024px) { .rv-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .rv-grid { grid-template-columns: 1fr; } }
+
+    /* ============================================
        11. FAQ
     ============================================ */
     #faq {
@@ -3373,56 +3463,81 @@
   <section class="section" id="reviews">
     <div class="container">
       <div class="section-header fade-in">
-        <div class="reviews-summary">
-          <span class="label">Đánh Giá · Reviews</span>
-          <div class="reviews-score">4.9</div>
-          <div style="color:var(--accent-gold);font-size:1.2rem;margin:0.5rem 0;">★★★★★</div>
-          <div class="reviews-total">Từ 200+ đánh giá Google</div>
-          <div class="google-badge">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-            Google Reviews
-          </div>
-        </div>
-        <h2>Những Người Đã Mang Bình Yên Trở Về.</h2>
+        <span class="label">Cảm Nhận · Từ Khách Thật</span>
+        <h2>Cảm Nhận Từ Những Vị Khách<br><em>Đã Ghé Thăm</em></h2>
+        <p class="section-sub">Chia sẻ thật từ khách hàng trên Facebook, Google Maps và Zalo</p>
       </div>
-      <div class="reviews-grid">
 
-        <div class="review-card fade-in">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"Tuyệt vời! View hồ từ VIP House đẹp không tưởng. Buổi sáng uống cà phê nhìn ra hồ, cảm giác bình yên hiếm có giữa Lâm Đồng. Nhất định sẽ quay lại!"</p>
-          <div class="review-author">
-            <div class="review-avatar">👩</div>
-            <div>
-              <div class="review-name">Nguyễn Thanh Hà</div>
-              <div class="review-date">Tháng 5, 2026 · TP.HCM</div>
+      <div class="rv-grid">
+
+        <!-- Facebook -->
+        <div class="rv-card gs-fade">
+          <div class="rv-platform rv-fb">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.41 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.03 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.5 0-1.96.93-1.96 1.89v2.26h3.32l-.53 3.49h-2.79V24C19.61 23.1 24 18.1 24 12.07z"/></svg>
+            Facebook
+          </div>
+          <div class="rv-body">
+            <div class="rv-stars">★★★★★</div>
+            <p class="rv-text">"Không gian rất đẹp và yên tĩnh, view hồ cực chill. Chủ nhà thân thiện, nhiệt tình hướng dẫn. Sẽ quay lại lần sau cùng gia đình!"</p>
+            <div class="rv-author-row">
+              <div class="rv-avatar rv-avatar-fb">H</div>
+              <div>
+                <div class="rv-author">Hường Trần</div>
+                <div class="rv-date">Facebook · Tháng 6, 2025</div>
+              </div>
             </div>
           </div>
+          <a href="https://www.facebook.com/p/Hi%E1%BB%81n-L%C3%AA-Garden-61556329706262/" target="_blank" rel="noopener noreferrer" class="rv-source-link">Xem đánh giá trên Facebook →</a>
         </div>
 
-        <div class="review-card fade-in">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"Cả nhóm 15 người cực kỳ hài lòng! Khu vực campfire tuyệt, hoa cỏ may đẹp, chụp ảnh ra cái nào cũng đẹp. Giá cả hợp lý, nhân viên thân thiện. 10/10!"</p>
-          <div class="review-author">
-            <div class="review-avatar">👨</div>
-            <div>
-              <div class="review-name">Trần Minh Khoa</div>
-              <div class="review-date">Tháng 4, 2026 · Đà Nẵng</div>
+        <!-- Google Maps -->
+        <div class="rv-card gs-fade">
+          <div class="rv-platform rv-gg">
+            <svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+            Google Maps
+          </div>
+          <div class="rv-body">
+            <div class="rv-stars">★★★★★</div>
+            <p class="rv-text">"Farmstay đẹp, nhiều kiểu phòng độc đáo. Mình ở Triangle House, buổi sáng nghe chim hót, không khí trong lành. Giá rất hợp lý so với chất lượng."</p>
+            <div class="rv-author-row">
+              <div class="rv-avatar rv-avatar-gg">M</div>
+              <div>
+                <div class="rv-author">Minh Tuấn Lê</div>
+                <div class="rv-date">Google Maps · Tháng 4, 2025</div>
+              </div>
             </div>
           </div>
+          <a href="https://www.google.com/maps/place/?ftid=0x3173b9d965e948e9:0x515283da634ab176" target="_blank" rel="noopener noreferrer" class="rv-source-link">Xem đánh giá trên Google Maps →</a>
         </div>
 
-        <div class="review-card fade-in">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-text">"Gia đình mình có 2 bé nhỏ, rất phù hợp. Khu vui chơi trẻ em miễn phí, không gian an toàn. Triangle House kiến trúc cực đẹp. Chủ nhà nhiệt tình, chu đáo."</p>
-          <div class="review-author">
-            <div class="review-avatar">👩‍👧‍👦</div>
-            <div>
-              <div class="review-name">Lê Thu Hương</div>
-              <div class="review-date">Tháng 3, 2026 · Lâm Đồng</div>
+        <!-- Zalo -->
+        <div class="rv-card gs-fade">
+          <div class="rv-platform rv-zl">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M12 2C6.48 2 2 6.21 2 11.4c0 2.85 1.32 5.41 3.41 7.14L4 22l3.72-1.88A10.5 10.5 0 0012 20.8c5.52 0 10-4.21 10-9.4C22 6.21 17.52 2 12 2z"/></svg>
+            Zalo
+          </div>
+          <div class="rv-body">
+            <div class="rv-stars">★★★★★</div>
+            <p class="rv-text">"Mình đặt phòng Bungalow cho cả nhà 6 người, không gian rộng rãi, sạch sẽ. Bé con thích lắm vì có bãi cỏ rộng chạy nhảy. Cảm ơn chị chủ nhiệt tình ạ!"</p>
+            <div class="rv-author-row">
+              <div class="rv-avatar rv-avatar-zl">T</div>
+              <div>
+                <div class="rv-author">Thảo Nguyên</div>
+                <div class="rv-date">Zalo · Tháng 3, 2025</div>
+              </div>
             </div>
           </div>
+          <a href="https://zalo.me/0968987311" target="_blank" rel="noopener noreferrer" class="rv-source-link">Nhắn tin / hỏi thêm qua Zalo →</a>
         </div>
 
+      </div>
+
+      <div class="rv-cta gs-fade">
+        <p>Hãy là người tiếp theo trải nghiệm sự bình yên tại Hiền Lê Garden 🌿</p>
+        <div class="rv-cta-links">
+          <a href="https://www.facebook.com/p/Hi%E1%BB%81n-L%C3%AA-Garden-61556329706262/" target="_blank" rel="noopener noreferrer">Đọc thêm trên Facebook →</a>
+          <a href="https://www.google.com/maps/place/?ftid=0x3173b9d965e948e9:0x515283da634ab176" target="_blank" rel="noopener noreferrer">Đánh giá Google Maps →</a>
+        </div>
       </div>
     </div>
   </section>
