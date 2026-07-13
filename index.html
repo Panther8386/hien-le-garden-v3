@@ -1985,336 +1985,72 @@
       .ota-card { min-height: 110px; padding: 1.5rem 1rem; }
     }
     /* ============================================
-       BLOG / TRAVEL GUIDE SECTION
+       BLOG / CAM NANG PREVIEW CARDS
     ============================================ */
     #blog { background: var(--bg-primary); }
-    .blog-article { max-width: 900px; margin: 0 auto; }
-
-    .blog-lead {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-      line-height: 2;
-      color: var(--text-primary);
-      font-style: italic;
-      margin-bottom: 1.5rem;
-    }
-    .blog-prose {
-      font-size: 0.925rem;
-      line-height: 1.9;
-      color: var(--text-muted);
-      margin-bottom: 1.1rem;
-    }
-    .blog-note {
-      background: var(--bg-surface);
-      border-left: 3px solid var(--accent-gold);
-      padding: 1rem 1.25rem;
-      border-radius: 0 8px 8px 0;
-      margin: 2rem 0;
-    }
-    .blog-note p { font-size: 0.85rem; color: var(--text-muted); margin: 0; line-height: 1.75; }
-
-    .blog-h2 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.35rem, 3vw, 1.75rem);
-      font-weight: 600;
-      color: var(--text-primary);
-      margin: 3.5rem 0 1.25rem;
-      padding-bottom: 0.75rem;
-      border-bottom: 1px solid var(--border-subtle);
-    }
-    .blog-h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.15rem;
-      font-weight: 600;
-      color: var(--accent-gold);
-      margin: 2rem 0 0.5rem;
-    }
-
-    /* 10 Spots */
-    .blog-spots-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.75rem;
-      margin: 2.5rem 0;
-    }
-    .blog-spot-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-subtle);
-      border-radius: 16px;
-      padding: 1.75rem;
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.3s cubic-bezier(0.25,0.46,0.45,0.94),
-                  box-shadow 0.3s ease;
-    }
-    .blog-spot-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 48px rgba(0,0,0,0.1);
-    }
-    .blog-spot-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 5.5rem;
-      font-weight: 700;
-      line-height: 1;
-      color: var(--accent-gold);
-      opacity: 0.18;
-      position: absolute;
-      top: 0.25rem;
-      right: 1.25rem;
-      letter-spacing: -3px;
-      pointer-events: none;
-    }
-    .blog-spot-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: var(--text-primary);
-      line-height: 1.45;
-      margin-bottom: 0.75rem;
-      padding-right: 2rem;
-    }
-    .blog-spot-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-bottom: 0.65rem;
-    }
-    .blog-badge {
-      font-size: 0.7rem;
-      padding: 0.2rem 0.6rem;
-      border-radius: 20px;
-      background: var(--bg-primary);
-      border: 1px solid var(--border-subtle);
-      color: var(--text-muted);
-      white-space: nowrap;
-    }
-    .blog-badge-gold {
-      background: rgba(180,144,74,0.1);
-      border-color: var(--border-gold);
-      color: var(--accent-gold);
-    }
-    .blog-spot-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.35rem;
-      margin: 0.65rem 0;
-    }
-    .blog-tag {
-      font-size: 0.68rem;
-      padding: 0.18rem 0.5rem;
-      border-radius: 4px;
-      background: rgba(180,144,74,0.07);
-      color: var(--text-dim);
-      border: 1px solid var(--border-subtle);
-    }
-    .blog-spot-desc {
-      font-size: 0.855rem;
-      line-height: 1.82;
-      color: var(--text-muted);
-      margin-bottom: 0;
-    }
-    .blog-spot-tip {
-      margin-top: 0.9rem;
-      padding: 0.6rem 0.9rem;
-      background: rgba(255,195,0,0.05);
-      border-radius: 8px;
-      border-left: 2px solid var(--accent-gold);
-      font-size: 0.78rem;
-      color: var(--text-dim);
-      line-height: 1.65;
-    }
-
-    /* Season cards */
-    .blog-season-grid {
+    .cn-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
-      margin: 1.75rem 0;
+      gap: 2rem;
     }
-    .blog-season-card {
-      background: var(--bg-surface);
+    @media (max-width: 900px) { .cn-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 580px) { .cn-grid { grid-template-columns: 1fr; } }
+    .cn-card {
+      background: var(--bg-card);
       border: 1px solid var(--border-subtle);
       border-radius: 12px;
-      padding: 1.5rem;
-    }
-    .blog-season-icon { font-size: 1.75rem; margin-bottom: 0.65rem; }
-    .blog-season-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--text-primary);
-      margin-bottom: 0.25rem;
-    }
-    .blog-season-time {
-      font-size: 0.72rem;
-      color: var(--accent-gold);
-      font-style: italic;
-      margin-bottom: 0.65rem;
-      letter-spacing: 0.3px;
-    }
-    .blog-season-desc { font-size: 0.82rem; color: var(--text-muted); line-height: 1.78; }
-
-    /* Food guide */
-    .blog-food-list { display: flex; flex-direction: column; gap: 1rem; margin: 1.5rem 0; }
-    .blog-food-item {
-      padding: 1.1rem 1.4rem;
-      background: var(--bg-surface);
-      border: 1px solid var(--border-subtle);
-      border-radius: 10px;
+      overflow: hidden;
       display: flex;
-      gap: 1rem;
-      align-items: flex-start;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .blog-food-emoji { font-size: 1.4rem; flex-shrink: 0; margin-top: 0.1rem; }
-    .blog-food-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--text-primary);
-      margin-bottom: 0.3rem;
+    .cn-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.18);
     }
-    .blog-food-desc { font-size: 0.83rem; color: var(--text-muted); line-height: 1.78; }
-
-    /* Itinerary tabs */
-    .blog-itinerary-tabs { display: flex; gap: 0.6rem; margin-bottom: 1.5rem; flex-wrap: wrap; }
-    .blog-tab-btn {
-      padding: 0.45rem 1.2rem;
-      border-radius: 20px;
-      font-size: 0.83rem;
-      font-weight: 500;
-      cursor: pointer;
-      border: 1px solid var(--border-subtle);
-      background: transparent;
-      color: var(--text-muted);
-      transition: all 0.2s ease;
+    .cn-img-wrap {
+      aspect-ratio: 16/10;
+      overflow: hidden;
     }
-    .blog-tab-btn:hover { border-color: var(--accent-gold); color: var(--accent-gold); }
-    .blog-tab-btn.active { background: var(--accent-gold); color: #fff; border-color: var(--accent-gold); }
-    .blog-itinerary-content { display: none; }
-    .blog-itinerary-content.active { display: block; }
-    .blog-day-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-subtle);
-      border-radius: 12px;
-      padding: 1.4rem 1.6rem;
-      margin-bottom: 1rem;
+    .cn-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
     }
-    .blog-day-label {
-      font-size: 0.68rem;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--accent-gold);
-      margin-bottom: 0.3rem;
+    .cn-card:hover .cn-img-wrap img { transform: scale(1.04); }
+    .cn-body {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
     }
-    .blog-day-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.05rem;
-      font-weight: 600;
+    .cn-title {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
       color: var(--text-primary);
       margin-bottom: 0.75rem;
+      line-height: 1.4;
     }
-    .blog-day-items { list-style: none; padding: 0; margin: 0; }
-    .blog-day-items li {
-      font-size: 0.855rem;
-      color: var(--text-muted);
-      line-height: 1.8;
-      padding-left: 1.25rem;
-      position: relative;
+    .cn-desc {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      flex: 1;
+      margin-bottom: 1.25rem;
     }
-    .blog-day-items li::before { content: '–'; color: var(--accent-gold); position: absolute; left: 0; }
-
-    /* Tips */
-    .blog-tips-box {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-gold);
-      border-radius: 12px;
-      padding: 1.75rem;
-      margin: 2rem 0;
-    }
-    .blog-tips-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 0.7rem; }
-    .blog-tips-list li {
-      font-size: 0.875rem;
-      color: var(--text-muted);
-      line-height: 1.78;
-      padding-left: 1.5rem;
-      position: relative;
-    }
-    .blog-tips-list li::before { content: '→'; color: var(--accent-gold); position: absolute; left: 0; top: 0; }
-
-    /* Blog FAQ */
-    .blog-faq-list {
-      border: 1px solid var(--border-subtle);
-      border-radius: 12px;
-      overflow: hidden;
-      margin: 1.5rem 0;
-    }
-    .blog-faq-item { border-bottom: 1px solid var(--border-subtle); }
-    .blog-faq-item:last-child { border-bottom: none; }
-    .blog-faq-q {
-      width: 100%;
-      text-align: left;
-      padding: 1.1rem 1.4rem;
-      font-size: 0.9rem;
+    .cn-btn {
+      color: var(--accent-gold);
+      font-size: 0.85rem;
+      text-decoration: none;
       font-weight: 500;
-      color: var(--text-primary);
-      background: var(--bg-surface);
-      border: none;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      transition: background 0.2s;
-      line-height: 1.5;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+      align-self: flex-start;
     }
-    .blog-faq-q:hover { background: var(--bg-primary); }
-    .blog-faq-chevron { font-size: 0.65rem; color: var(--accent-gold); transition: transform 0.3s ease; flex-shrink: 0; }
-    .blog-faq-item.open .blog-faq-chevron { transform: rotate(180deg); }
-    .blog-faq-a {
-      font-size: 0.865rem;
-      color: var(--text-muted);
-      line-height: 1.82;
-      padding: 0 1.4rem;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.38s ease, padding 0.25s ease;
-    }
-    .blog-faq-item.open .blog-faq-a { max-height: 400px; padding: 0.75rem 1.4rem 1.25rem; }
+    .cn-btn:hover { border-color: var(--accent-gold); }
 
-    /* Blog ending + CTA */
-    .blog-ending {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-      line-height: 2.1;
-      color: var(--text-primary);
-      text-align: center;
-      margin: 3.5rem 0 2rem;
-      font-style: italic;
-    }
-    .blog-ending strong { color: var(--accent-gold); font-style: normal; font-weight: 600; }
-    .blog-cta-box {
-      text-align: center;
-      padding: 2.5rem;
-      background: var(--bg-surface);
-      border: 1px solid var(--border-gold);
-      border-radius: 16px;
-      margin-top: 2rem;
-    }
-    .blog-cta-lead { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.75; }
-    .blog-cta-btns { display: flex; gap: 0.85rem; justify-content: center; flex-wrap: wrap; }
-
-    @media (max-width: 768px) {
-      .blog-spots-grid { grid-template-columns: 1fr; gap: 1.25rem; }
-      .blog-season-grid { grid-template-columns: 1fr; }
-      .blog-spot-num { font-size: 3.5rem; }
-      .blog-cta-box { padding: 1.75rem 1.25rem; }
-    }
-    @media (max-width: 480px) {
-      .blog-cta-btns { flex-direction: column; }
-      .blog-cta-btns a { width: 100%; text-align: center; }
-    }
-
-    /* ============================================
+        /* ============================================
        V3 — GSAP ANIMATION INITIAL STATES
     ============================================ */
     .gs-fade { opacity: 0; transform: translateY(40px); }
@@ -3039,7 +2775,7 @@
 
             <p>Chúng tôi mong nơi này trở thành một khoảng lặng giữa những ngày bận rộn — nơi bạn có thể dành thời gian cho gia đình, cho người mình yêu thương, cho một cuốn sách còn đọc dở, hoặc đơn giản là cho chính mình.</p>
 
-            <a href="#about" class="about-read-more">Đọc câu chuyện của Hiền Lê Garden →</a>
+            <a href="gioi-thieu/" class="about-read-more">Đọc câu chuyện của Hiền Lê Garden →</a>
 
           </div>
 
@@ -3540,400 +3276,52 @@
   </section>
 
   <!-- ============================================
-       BLOG / TRAVEL GUIDE
+       CAM NANG / TRAVEL GUIDE PREVIEW
   ============================================ -->
   <section class="section" id="blog">
     <div class="container">
-      <div class="section-header fade-in">
+      <div class="section-header gs-fade">
         <span class="label">Cẩm Nang Du Lịch · Travel Guide</span>
-        <h2>10 Điểm Check-in Quanh Hiền Lê Garden</h2>
-        <p class="section-sub">Kinh nghiệm du lịch Gia Nghĩa, ẩm thực và mùa hoa đẹp nhất</p>
+        <h2>Khám Phá Gia Nghĩa</h2>
+        <p class="section-sub">Những gợi ý từ Hiền Lê Garden cho chuyến đi thêm trọn vẹn</p>
       </div>
+      <div class="cn-grid">
 
-      <div class="blog-article">
-        <!-- INTRO -->
-        <p class="blog-lead fade-in">Có những chuyến đi không cần một lịch trình thật dày. Chỉ cần một buổi sáng se lạnh, một con đường cao nguyên còn vương hơi sương, một tách cà phê nóng bên hồ và đủ thời gian để nghe tiếng chim trong vườn.</p>
-
-        <p class="blog-prose fade-in">Khu vực Gia Nghĩa trước đây là trung tâm của tỉnh Đắk Nông, nổi bật với địa hình đồi thấp, hồ nước, rừng cây, thác và những con đường bazan uốn lượn. Đây cũng là cửa ngõ thuận tiện để khám phá tuyến du lịch "Âm vang từ Trái đất" thuộc Công viên địa chất toàn cầu UNESCO Đắk Nông.</p>
-
-        <p class="blog-prose fade-in">Hiền Lê Garden nằm tại khu vực đường bờ đập, Tổ 7, phường Nghĩa Phú cũ. Sau khi sắp xếp đơn vị hành chính từ tháng 7/2025, khu vực này thuộc phường Nam Gia Nghĩa, tỉnh Lâm Đồng. Trong bài viết, tên gọi "Gia Nghĩa – Đắk Nông" vẫn được sử dụng vì đây là tên địa danh quen thuộc với du khách và phổ biến trên các công cụ tìm kiếm.</p>
-
-        <div class="blog-note fade-in">
-          <p><strong>Lưu ý:</strong> Khoảng cách dưới đây là quãng đường tham khảo từ Hiền Lê Garden. Khoảng cách thực tế có thể thay đổi tùy tuyến đường, vị trí cổng vào và tình trạng giao thông.</p>
-        </div>
-
-        <!-- 10 SPOTS GRID -->
-        <div class="blog-spots-grid">
-
-          <article class="blog-spot-card fade-in">
-            <span class="blog-spot-num">01</span>
-            <h3 class="blog-spot-title">Cầu treo Đắk R'Moan – cây cầu giữa lòng hồ xanh</h3>
-            <div class="blog-spot-badges">
-              <span class="blog-badge blog-badge-gold">📍 5–10 km</span>
-              <span class="blog-badge">⏰ 6:00–8:00 / 16:00–17:30</span>
-            </div>
-            <div class="blog-spot-tags">
-              <span class="blog-tag">Chụp ảnh</span>
-              <span class="blog-tag">Ngắm hồ</span>
-              <span class="blog-tag">Đi dạo nhẹ</span>
-            </div>
-            <p class="blog-spot-desc">Cầu treo Đắk R'Moan nằm tại khu vực Tân An, phường Nam Gia Nghĩa, bắc qua lòng hồ thủy điện. Mặt nước xanh, những triền đồi thấp và cây cầu nhỏ tạo nên một khung cảnh vừa mộc mạc vừa đặc trưng của vùng cao nguyên. Khi nắng không quá gắt, mặt hồ thường phản chiếu bầu trời và những mảng rừng phía xa, tạo chiều sâu rất đẹp cho ảnh phong cảnh.</p>
-            <p class="blog-spot-tip">⚠️ Dựng xe tại nơi an toàn, không đứng tập trung quá đông trên cầu và hạn chế đi vào những ngày mưa lớn hoặc gió mạnh.</p>
-          </article>
-
-          <article class="blog-spot-card fade-in">
-            <span class="blog-spot-num">02</span>
-            <h3 class="blog-spot-title">Tượng đài N'Trang Lơng – nhìn Gia Nghĩa từ trên cao</h3>
-            <div class="blog-spot-badges">
-              <span class="blog-badge blog-badge-gold">📍 5–8 km</span>
-              <span class="blog-badge">⏰ Sáng sớm hoặc trước hoàng hôn</span>
-            </div>
-            <div class="blog-spot-tags">
-              <span class="blog-tag">Lịch sử</span>
-              <span class="blog-tag">Ngắm toàn cảnh</span>
-              <span class="blog-tag">Kiến trúc</span>
-            </div>
-            <p class="blog-spot-desc">Tượng đài anh hùng dân tộc N'Trang Lơng được xây dựng trên đồi Đắk Nur, tưởng nhớ người lãnh đạo đồng bào M'nông đứng lên chống thực dân Pháp giai đoạn 1912–1936. Không gian quảng trường rộng, địa thế cao và tầm nhìn thoáng giúp nơi đây trở thành một trong những điểm ngắm cảnh thành phố đẹp nhất.</p>
-            <p class="blog-spot-tip">⚠️ Nên lựa chọn trang phục lịch sự — đây là công trình lịch sử–văn hóa quan trọng, không chỉ là điểm chụp ảnh.</p>
-          </article>
-
-          <article class="blog-spot-card fade-in">
-            <span class="blog-spot-num">03</span>
-            <h3 class="blog-spot-title">Cụm hồ trung tâm Gia Nghĩa – khoảng lặng giữa phố núi</h3>
-            <div class="blog-spot-badges">
-              <span class="blog-badge blog-badge-gold">📍 6–10 km</span>
-              <span class="blog-badge">⏰ 16:00–18:00</span>
-            </div>
-            <div class="blog-spot-tags">
-              <span class="blog-tag">Đi bộ</span>
-              <span class="blog-tag">Hoàng hôn</span>
-              <span class="blog-tag">Đời thường</span>
-            </div>
-            <p class="blog-spot-desc">Gia Nghĩa có hệ thống hồ, suối và mặt nước đan xen trong không gian đô thị. Khu vực này gồm hồ trung tâm rộng khoảng 128 ha, hồ Hạ, hồ Thượng, hồ Thiên Nga và hồ thủy điện Đắk R'tíh. Vẻ đẹp của hồ trung tâm nằm ở sự yên tĩnh: vài con đường dốc, mặt nước lặng, sương chiều và những mái nhà thấp thoáng trên đồi.</p>
-          </article>
-
-          <article class="blog-spot-card fade-in">
-            <span class="blog-spot-num">04</span>
-            <h3 class="blog-spot-title">Chùa Pháp Hoa – nét bình yên giữa thành phố</h3>
-            <div class="blog-spot-badges">
-              <span class="blog-badge blog-badge-gold">📍 6–10 km</span>
-              <span class="blog-badge">⏰ 7:00–10:00 / 15:00–17:00</span>
-            </div>
-            <div class="blog-spot-tags">
-              <span class="blog-tag">Tâm linh</span>
-              <span class="blog-tag">Kiến trúc</span>
-              <span class="blog-tag">Tĩnh lặng</span>
-            </div>
-            <p class="blog-spot-desc">Chùa Pháp Hoa nằm trên đường Chu Văn An, là một trong những điểm tham quan tâm linh quen thuộc của địa phương và nằm trong tuyến du lịch từ Gia Nghĩa đi Tà Đùng. Không gian chùa có sự kết hợp giữa kiến trúc Phật giáo và cảnh quan đồi núi Tây Nguyên.</p>
-            <p class="blog-spot-tip">⚠️ Mặc trang phục kín đáo, hạn chế nói lớn và không sử dụng flycam khi chưa được cho phép.</p>
-          </article>
-
-          <article class="blog-spot-card fade-in">
-            <span class="blog-spot-num">05</span>
-            <h3 class="blog-spot-title">Đồi chè Gia Nghĩa – những đường cong xanh giữa cao nguyên</h3>
-            <div class="blog-spot-badges">
-              <span class="blog-badge blog-badge-gold">📍 10–15 km</span>
-              <span class="blog-badge">⏰ 6:00–8:30</span>
-            </div>
-            <div class="blog-spot-tags">
-              <span class="blog-tag">Chụp ảnh</span>
-              <span class="blog-tag">Sương sớm</span>
-              <span class="blog-tag">Dạo bộ</span>
-            </div>
-            <p class="blog-spot-desc">Những luống chè xanh chạy theo triền đồi tạo thành các lớp đường cong tự nhiên, đặc biệt đẹp khi nhìn từ vị trí cao. Buổi sáng là thời điểm lý tưởng: sương còn đọng trên lá, ánh nắng mềm và người làm vườn bắt đầu ngày mới. Trang phục màu trắng, kem, nâu hoặc vàng nhạt thường nổi bật trên nền xanh.</p>
-            <p class="blog-spot-tip">⚠️ Phần lớn là đất canh tác của người dân. Đi theo lối có sẵn, không giẫm lên luống chè, không tự ý hái lá.</p>
-          </article>
-
-          <article class="blog-spot-card fade-in">
-            <span class="blog-spot-num">06</span>
-            <h3 class="blog-spot-title">Thác Ba Tầng – dòng nước giữa rừng và đá bazan</h3>
-            <div class="blog-spot-badges">
-              <span class="blog-badge blog-badge-gold">📍 12–18 km</span>
-              <span class="blog-badge">⏰ 8:00–11:00</span>
-            </div>
-            <div class="blog-spot-tags">
-              <span class="blog-tag">Dã ngoại</span>
-              <span class="blog-tag">Thiên nhiên</span>
-              <span class="blog-tag">Chụp ảnh</span>
-            </div>
-            <p class="blog-spot-desc">Thác Ba Tầng nằm theo hướng từ Gia Nghĩa đi Buôn Ma Thuột, gần khu vực Quảng Thành. Tên gọi bắt nguồn từ việc dòng nước chảy qua nhiều bậc đá nối tiếp. Khác với thác Liêng Nung cao và mạnh, Thác Ba Tầng mang vẻ đẹp gần gũi hơn, phù hợp với những buổi dã ngoại ngắn.</p>
-            <p class="blog-spot-tip">⚠️ Đường xuống thác có thể trơn sau mưa. Mang giày có độ bám tốt, không đứng sát mép đá.</p>
-          </article>
-
-          <article class="blog-spot-card fade-in">
-            <span class="blog-spot-num">07</span>
-            <h3 class="blog-spot-title">Thác Liêng Nung – biểu tượng thiên nhiên của Gia Nghĩa</h3>
-            <div class="blog-spot-badges">
-              <span class="blog-badge blog-badge-gold">📍 15–20 km</span>
-              <span class="blog-badge">⏰ 8:00–11:00</span>
-            </div>
-            <div class="blog-spot-tags">
-              <span class="blog-tag">Trekking nhẹ</span>
-              <span class="blog-tag">Địa chất UNESCO</span>
-              <span class="blog-tag">Chụp ảnh</span>
-            </div>
-            <p class="blog-spot-desc">Thác Liêng Nung, còn gọi là thác Diệu Thanh, nằm tại bon N'Jriêng, khu vực Đắk Nia cũ — một điểm thuộc Công viên địa chất toàn cầu UNESCO Đắk Nông. Dòng nước đổ từ vách đá cao khoảng 30 m, bên dưới là một vòm đá lớn với các khối đá mang đặc trưng của quá trình kiến tạo núi lửa. Mùa khô thuận lợi hơn để đi lại và ảnh chụp thường đẹp hơn.</p>
-            <p class="blog-spot-tip">⚠️ Đừng cố đứng quá gần chân thác chỉ để có một bức ảnh — góc chụp xa với vách đá và cây rừng thường đẹp hơn.</p>
-          </article>
-
-          <article class="blog-spot-card fade-in">
-            <span class="blog-spot-num">08</span>
-            <h3 class="blog-spot-title">Bon N'Jriêng – không gian văn hóa bản địa Đắk Nia</h3>
-            <div class="blog-spot-badges">
-              <span class="blog-badge blog-badge-gold">📍 15–20 km</span>
-              <span class="blog-badge">⏰ Kết hợp Liêng Nung</span>
-            </div>
-            <div class="blog-spot-tags">
-              <span class="blog-tag">Văn hóa</span>
-              <span class="blog-tag">Thổ cẩm</span>
-              <span class="blog-tag">Cộng đồng</span>
-            </div>
-            <p class="blog-spot-desc">Bon N'Jriêng là nơi lưu giữ nhiều nét văn hóa của đồng bào dân tộc Mạ và từng được lựa chọn xây dựng mô hình du lịch cộng đồng. Khi có người hướng dẫn, bạn có thể tìm hiểu về dệt thổ cẩm, đan lát, văn hóa cộng đồng và những món ăn truyền thống.</p>
-            <p class="blog-spot-tip">⚠️ Hãy xin phép trước khi chụp chân dung, nhà ở hoặc nghi lễ. Du lịch cộng đồng chỉ có ý nghĩa khi du khách bước vào với sự tôn trọng.</p>
-          </article>
-
-          <article class="blog-spot-card fade-in">
-            <span class="blog-spot-num">09</span>
-            <h3 class="blog-spot-title">Thiền viện Trúc Lâm Đạo Nguyên – bình yên giữa rừng Nâm Nung</h3>
-            <div class="blog-spot-badges">
-              <span class="blog-badge blog-badge-gold">📍 40–45 km</span>
-              <span class="blog-badge">⏰ Buổi sáng</span>
-            </div>
-            <div class="blog-spot-tags">
-              <span class="blog-tag">Hành hương</span>
-              <span class="blog-tag">Tĩnh tâm</span>
-              <span class="blog-tag">Rừng núi</span>
-            </div>
-            <p class="blog-spot-desc">Thiền viện Trúc Lâm Đạo Nguyên nằm trong không gian rừng của khu vực Nâm Nung, cách khoảng 39 km từ trung tâm Gia Nghĩa. Con đường đến thiền viện đưa du khách rời khỏi phố thị, đi qua rẫy cà phê, vườn cây và những khoảng rừng xanh. Không gian trong thiền viện yên tĩnh, thích hợp cho người muốn tạm rời điện thoại, tiếng xe và lịch trình vội vã.</p>
-          </article>
-
-          <article class="blog-spot-card fade-in">
-            <span class="blog-spot-num">10</span>
-            <h3 class="blog-spot-title">Hồ Tà Đùng – bức tranh sơn thủy ở rìa hành trình 50 km</h3>
-            <div class="blog-spot-badges">
-              <span class="blog-badge blog-badge-gold">📍 45–55 km</span>
-              <span class="blog-badge">⏰ Bình minh / 15:30–17:30</span>
-            </div>
-            <div class="blog-spot-tags">
-              <span class="blog-tag">Ngắm cảnh</span>
-              <span class="blog-tag">Toàn cảnh</span>
-              <span class="blog-tag">Trải nghiệm hồ</span>
-            </div>
-            <p class="blog-spot-desc">Hồ Tà Đùng nằm theo Quốc lộ 28, với hàng chục đảo và bán đảo nhỏ nhô lên giữa mặt nước — thường được ví như "vịnh Hạ Long giữa cao nguyên". Một chuyến đi Tà Đùng nên bắt đầu sớm và dành ít nhất nửa ngày. Những đoạn đèo, thung lũng, rừng cây và các bản làng trên đường là phần đẹp nhất của hành trình.</p>
-            <p class="blog-spot-tip">⚠️ Kiểm tra bản đồ trước khi khởi hành — một số điểm ngắm hoặc bến thuyền có thể vượt quá 50 km từ Hiền Lê Garden.</p>
-          </article>
-
-        </div><!-- .blog-spots-grid -->
-
-        <!-- SEASONS -->
-        <h2 class="blog-h2 fade-in">Du Lịch Gia Nghĩa — Mùa Nào Đẹp Nhất?</h2>
-
-        <div class="blog-season-grid">
-          <div class="blog-season-card fade-in">
-            <div class="blog-season-icon">🌸</div>
-            <div class="blog-season-title">Mùa hoa cà phê</div>
-            <div class="blog-season-time">Tháng 2 đến tháng 4</div>
-            <p class="blog-season-desc">Hoa cà phê nở thành nhiều đợt, mỗi đợt khoảng 7–10 ngày. Cuối tháng 2 đến đầu tháng 3 thường là khoảng thời gian dễ gặp những vườn cà phê nở trắng. Khi cả khu vườn đồng loạt ra hoa, không gian như được phủ tuyết, kèm theo hương thơm nhẹ lan trong gió.</p>
+        <article class="cn-card gs-fade">
+          <div class="cn-img-wrap">
+            <img src="./images/gallery-1.jpg" alt="10 điểm check-in quanh Gia Nghĩa" loading="lazy">
           </div>
-          <div class="blog-season-card fade-in">
-            <div class="blog-season-icon">🌻</div>
-            <div class="blog-season-title">Mùa hoa dã quỳ</div>
-            <div class="blog-season-time">Cuối tháng 10 đến tháng 12</div>
-            <p class="blog-season-desc">Hoa dã quỳ bắt đầu xuất hiện từ cuối tháng 10 và thường đẹp nhất trong tháng 11. Sắc vàng của hoa nổi bật trên nền đất đỏ bazan — đặc trưng của mùa khô Tây Nguyên. Thời gian chụp đẹp nhất là 6:30–8:30, khi hoa còn tươi và ánh sáng mềm.</p>
+          <div class="cn-body">
+            <h3 class="cn-title">10 Điểm Check-In Quanh Gia Nghĩa</h3>
+            <p class="cn-desc">Cầu treo Đắk R'Moan, đồi chè sương sớm, thiền viện rừng núi — những điểm dừng chân đáng nhớ quanh Hiền Lê Garden.</p>
+            <a href="cam-nang/10-diem-check-in/" class="cn-btn">Đọc cẩm nang →</a>
           </div>
-          <div class="blog-season-card fade-in">
-            <div class="blog-season-icon">💧</div>
-            <div class="blog-season-title">Mùa thác đẹp</div>
-            <div class="blog-season-time">Cuối mùa mưa & đầu mùa khô</div>
-            <p class="blog-season-desc">Cuối mùa mưa mang đến những dòng thác đầy nước và cảnh quan xanh tốt. Đầu mùa khô thuận tiện hơn cho việc đi lại và kết hợp nhiều điểm trong ngày. Nên hỏi người dân địa phương về tình trạng đường và dòng nước trước khi khởi hành.</p>
-          </div>
-        </div>
+        </article>
 
-        <!-- FOOD -->
-        <h2 class="blog-h2 fade-in">Du Lịch Gia Nghĩa Nên Ăn Gì?</h2>
-        <p class="blog-prose fade-in">Ẩm thực Đắk Nông mang nhiều dấu ấn của người M'nông, Mạ và các cộng đồng cư dân đã đến sinh sống tại Tây Nguyên. Nguyên liệu thường gần gũi với rừng, rẫy và sông suối.</p>
+        <article class="cn-card gs-fade">
+          <div class="cn-img-wrap">
+            <img src="./images/gallery-4.jpg" alt="Ăn gì khi du lịch Gia Nghĩa" loading="lazy">
+          </div>
+          <div class="cn-body">
+            <h3 class="cn-title">Ăn Gì Khi Du Lịch Gia Nghĩa</h3>
+            <p class="cn-desc">Canh thụt, cà phê Ban Mê, bánh căn núi lửa — ẩm thực Gia Nghĩa mang hương vị riêng của vùng cao nguyên đất đỏ.</p>
+            <a href="cam-nang/am-thuc-gia-nghia/" class="cn-btn">Đọc cẩm nang →</a>
+          </div>
+        </article>
 
-        <div class="blog-food-list">
-          <div class="blog-food-item fade-in">
-            <div class="blog-food-emoji">🍲</div>
-            <div>
-              <div class="blog-food-name">Canh thụt</div>
-              <p class="blog-food-desc">Món ăn tiêu biểu của người M'nông và Mạ, được nấu từ măng non, rau rừng, cà đắng, bột gạo và các nguyên liệu bản địa trong ống lồ ô. Vị canh thường hơi đắng, bùi và có mùi thơm tự nhiên — nên thử khi muốn hiểu sâu hơn về ẩm thực bản địa.</p>
-            </div>
+        <article class="cn-card gs-fade">
+          <div class="cn-img-wrap">
+            <img src="./images/gallery-3.jpg" alt="Mùa đẹp nhất để đến Tây Nguyên" loading="lazy">
           </div>
-          <div class="blog-food-item fade-in">
-            <div class="blog-food-emoji">🍚</div>
-            <div>
-              <div class="blog-food-name">Cơm lam và các món nướng</div>
-              <p class="blog-food-desc">Cơm được nấu trong ống tre hoặc ống nứa, giữ lại mùi thơm nhẹ và độ dẻo. Thường ăn cùng gà nướng, thịt nướng hoặc muối mè. Trong tiết trời se lạnh của Gia Nghĩa, một bữa cơm lam nóng bên bếp than mang lại cảm giác gần gũi hơn nhiều so với bữa ăn cầu kỳ.</p>
-            </div>
+          <div class="cn-body">
+            <h3 class="cn-title">Mùa Đẹp Nhất Để Đến Tây Nguyên</h3>
+            <p class="cn-desc">Sương sớm tháng Mười Một, hoa cà phê tháng Ba hay tiết trời se lạnh cuối năm — mỗi mùa có một lý do riêng để đến.</p>
+            <a href="cam-nang/du-lich-gia-nghia/" class="cn-btn">Đọc cẩm nang →</a>
           </div>
-          <div class="blog-food-item fade-in">
-            <div class="blog-food-emoji">🌿</div>
-            <div>
-              <div class="blog-food-name">Cà đắng và rau rừng</div>
-              <p class="blog-food-desc">Cà đắng có thể xuất hiện trong món canh, món xào hoặc ăn kèm các loại rau rừng. Vị đắng ban đầu khá rõ, nhưng sau đó để lại hậu vị đặc trưng. Rau rừng luộc chấm kho quẹt, cà đắng và cơm lam đều được nhắc đến như những món tiêu biểu của Đắk Nông.</p>
-            </div>
-          </div>
-          <div class="blog-food-item fade-in">
-            <div class="blog-food-emoji">🐟</div>
-            <div>
-              <div class="blog-food-name">Cá suối, cá lăng và món nấu măng chua</div>
-              <p class="blog-food-desc">Cá có thể được nướng, kho hoặc nấu cùng măng chua. Vị chua nhẹ của măng giúp món ăn dễ dùng và phù hợp với thời tiết cao nguyên. Khi gọi món, nên hỏi rõ loại cá và giá theo phần hay theo trọng lượng.</p>
-            </div>
-          </div>
-          <div class="blog-food-item fade-in">
-            <div class="blog-food-emoji">🍗</div>
-            <div>
-              <div class="blog-food-name">Gà xào măng chua</div>
-              <p class="blog-food-desc">Món ăn gắn với văn hóa ẩm thực của người Mạ. Vị ngọt của thịt gà kết hợp với vị chua của măng tạo nên món ăn đậm đà, thích hợp dùng cùng cơm nóng.</p>
-            </div>
-          </div>
-          <div class="blog-food-item fade-in">
-            <div class="blog-food-emoji">🫙</div>
-            <div>
-              <div class="blog-food-name">Rượu cần</div>
-              <p class="blog-food-desc">Rượu cần không chỉ là thức uống mà còn gắn với đời sống cộng đồng và những dịp lễ của đồng bào bản địa. Chỉ nên thưởng thức với lượng vừa phải — tuyệt đối không điều khiển phương tiện sau khi uống.</p>
-            </div>
-          </div>
-          <div class="blog-food-item fade-in">
-            <div class="blog-food-emoji">☕</div>
-            <div>
-              <div class="blog-food-name">Cà phê và mắc ca Đắk Nông</div>
-              <p class="blog-food-desc">Cà phê rang, hạt mắc ca và một số nông sản theo mùa phù hợp để mua làm quà. Một số sản phẩm mắc ca tại Đắk Nông đã được phát triển theo tiêu chuẩn OCOP. Nên lựa chọn sản phẩm có bao bì và nguồn gốc rõ ràng.</p>
-            </div>
-          </div>
-        </div>
+        </article>
 
-        <!-- ITINERARY -->
-        <h2 class="blog-h2 fade-in">Gợi Ý Lịch Trình từ Hiền Lê Garden</h2>
-
-        <div class="blog-itinerary-tabs fade-in">
-          <button class="blog-tab-btn active" data-tab="itinerary-2d">2 Ngày 1 Đêm</button>
-          <button class="blog-tab-btn" data-tab="itinerary-3d">3 Ngày 2 Đêm</button>
-        </div>
-
-        <div class="blog-itinerary-content active" id="itinerary-2d">
-          <div class="blog-day-card fade-in">
-            <div class="blog-day-label">Ngày 1</div>
-            <div class="blog-day-title">Thành phố – Hồ – Đồi chè</div>
-            <ul class="blog-day-items">
-              <li><strong>Buổi sáng:</strong> Dùng điểm tâm, uống cà phê và bắt đầu ngày mới tại Hiền Lê Garden. Di chuyển đến cầu treo Đắk R'Moan, sau đó tham quan Tượng đài N'Trang Lơng và Chùa Pháp Hoa.</li>
-              <li><strong>Buổi trưa:</strong> Thưởng thức cơm lam, món nướng hoặc các món ăn địa phương tại khu vực Gia Nghĩa.</li>
-              <li><strong>Buổi chiều:</strong> Tham quan đồi chè, trở lại cụm hồ trung tâm để ngắm hoàng hôn.</li>
-              <li><strong>Buổi tối:</strong> Trở về Hiền Lê Garden, dùng bữa trong không gian cây xanh và nghỉ ngơi bên hồ.</li>
-            </ul>
-          </div>
-          <div class="blog-day-card fade-in">
-            <div class="blog-day-label">Ngày 2</div>
-            <div class="blog-day-title">Thác và văn hóa bản địa</div>
-            <ul class="blog-day-items">
-              <li>Khởi hành sớm đến thác Liêng Nung.</li>
-              <li>Kết hợp tham quan bon N'Jriêng hoặc khu vực làng nghề Đắk Nia khi có hoạt động phù hợp.</li>
-              <li>Buổi chiều có thể lựa chọn Thác Ba Tầng trước khi quay lại Hiền Lê Garden.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="blog-itinerary-content" id="itinerary-3d">
-          <div class="blog-day-card fade-in">
-            <div class="blog-day-label">Ngày 1</div>
-            <div class="blog-day-title">Thành phố – Hồ – Đồi chè</div>
-            <ul class="blog-day-items">
-              <li>Dùng điểm tâm tại Hiền Lê Garden. Di chuyển đến cầu treo Đắk R'Moan, Tượng đài N'Trang Lơng và Chùa Pháp Hoa.</li>
-              <li>Buổi trưa dùng bữa tại Gia Nghĩa. Buổi chiều tham quan đồi chè và ngắm hoàng hôn tại hồ trung tâm.</li>
-            </ul>
-          </div>
-          <div class="blog-day-card fade-in">
-            <div class="blog-day-label">Ngày 2</div>
-            <div class="blog-day-title">Thác Liêng Nung và văn hóa bản địa</div>
-            <ul class="blog-day-items">
-              <li>Khởi hành sớm đến thác Liêng Nung và bon N'Jriêng.</li>
-              <li>Buổi chiều ghé Thác Ba Tầng hoặc thiền viện Trúc Lâm Đạo Nguyên tùy hướng di chuyển.</li>
-            </ul>
-          </div>
-          <div class="blog-day-card fade-in">
-            <div class="blog-day-label">Ngày 3</div>
-            <div class="blog-day-title">Hành trình hồ Tà Đùng</div>
-            <ul class="blog-day-items">
-              <li>Xuất phát trước 6:30, dành trọn ngày cho cung đường Quốc lộ 28 – hồ Tà Đùng.</li>
-              <li>Dừng tại các điểm quan sát an toàn trên đường, trải nghiệm hồ và trở về trước khi trời tối.</li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- TIPS -->
-        <h2 class="blog-h2 fade-in">Kinh Nghiệm Cần Nhớ</h2>
-        <div class="blog-tips-box fade-in">
-          <ul class="blog-tips-list">
-            <li>Gia Nghĩa có nhiều đường dốc và thời tiết có thể thay đổi nhanh. Một ngày nắng đẹp ở trung tâm không đồng nghĩa đường xuống thác hoàn toàn khô ráo.</li>
-            <li>Chuẩn bị giày chống trơn, áo khoác nhẹ, nước uống, kem chống nắng, thuốc chống côn trùng và túi chống nước cho thiết bị điện tử.</li>
-            <li>Không nên cố gắng đi đủ cả 10 điểm trong một ngày. Một chuyến đi đẹp không được tính bằng số địa điểm đã ghé.</li>
-            <li>Tại thác nước, không đứng dưới dòng chảy mạnh, không leo ra mép đá và không bơi ở khu vực chưa được xác nhận an toàn.</li>
-            <li>Tại vườn cây, đồi chè và khu dân cư bản địa, hãy xin phép trước khi tham quan hoặc chụp ảnh.</li>
-          </ul>
-        </div>
-
-        <!-- CLOSING PROSE -->
-        <div class="blog-ending fade-in">
-          <p>Hiền Lê Garden không phải nơi để chạy theo một lịch trình thật vội.</p>
-          <p>Đó có thể là nơi bạn thức dậy cùng tiếng chim, bước ra khu vườn khi sương còn nằm trên mặt hồ, uống một ly cà phê nóng rồi mới quyết định hôm nay sẽ đi đâu.</p>
-          <p>Có ngày bạn chọn thác Liêng Nung. Có ngày bạn đi giữa những đồi chè.<br>Cũng có ngày bạn chẳng cần đi đâu cả.</p>
-          <p><strong>Hiền Lê Garden — bình yên không ở đâu xa.</strong></p>
-        </div>
-
-        <!-- BLOG CTA -->
-        <div class="blog-cta-box fade-in">
-          <p class="blog-cta-lead">Hãy chọn một ngày để rời phố, về với hồ nước, khu vườn và những khoảng bình yên của cao nguyên.</p>
-          <div class="blog-cta-btns">
-            <a href="#booking" class="btn btn-gold" onclick="openBookingModal(); return false;">Khám phá Hiền Lê Garden</a>
-            <a href="#map" class="btn btn-outline">Xem bản đồ hành trình</a>
-            <a href="https://zalo.me/0968987311" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Nhắn Hiền Lê Garden</a>
-          </div>
-        </div>
-
-        <!-- BLOG FAQ -->
-        <h2 class="blog-h2 fade-in">Câu Hỏi Thường Gặp</h2>
-        <div class="blog-faq-list fade-in">
-          <div class="blog-faq-item">
-            <button class="blog-faq-q">
-              <span>Hiền Lê Garden cách trung tâm Gia Nghĩa bao xa?</span>
-              <span class="blog-faq-chevron">▼</span>
-            </button>
-            <div class="blog-faq-a">Hiền Lê Garden nằm tại khu vực Nghĩa Phú cũ, nay thuộc phường Nam Gia Nghĩa. Khoảng cách đến từng khu vực trung tâm có thể khác nhau tùy điểm đến và tuyến đường.</div>
-          </div>
-          <div class="blog-faq-item">
-            <button class="blog-faq-q">
-              <span>Có thể đi Tà Đùng trong ngày từ Hiền Lê Garden không?</span>
-              <span class="blog-faq-chevron">▼</span>
-            </button>
-            <div class="blog-faq-a">Có thể. Tuy nhiên, nên dành gần trọn một ngày cho hành trình và xuất phát sớm. Một số điểm ngắm hoặc bến thuyền có thể cách Hiền Lê Garden hơn 50 km — nên kiểm tra bản đồ trước khi khởi hành.</div>
-          </div>
-          <div class="blog-faq-item">
-            <button class="blog-faq-q">
-              <span>Mùa nào thích hợp nhất để chụp ảnh hoa cà phê?</span>
-              <span class="blog-faq-chevron">▼</span>
-            </button>
-            <div class="blog-faq-a">Hoa cà phê thường nở từ tháng 2 đến tháng 4, trong đó cuối tháng 2 và đầu tháng 3 thường là khoảng thời gian dễ gặp hoa nở đẹp nhất. Thời điểm chính xác thay đổi theo thời tiết và lịch tưới của từng vườn.</div>
-          </div>
-          <div class="blog-faq-item">
-            <button class="blog-faq-q">
-              <span>Có nên đi thác Liêng Nung vào mùa mưa không?</span>
-              <span class="blog-faq-chevron">▼</span>
-            </button>
-            <div class="blog-faq-a">Mùa mưa giúp thác mạnh và cảnh quan xanh hơn, nhưng đường xuống có thể trơn và dòng nước nguy hiểm hơn. Cần kiểm tra thời tiết, hỏi người địa phương và tránh đi khi có mưa lớn.</div>
-          </div>
-          <div class="blog-faq-item">
-            <button class="blog-faq-q">
-              <span>Du lịch Gia Nghĩa nên mua gì làm quà?</span>
-              <span class="blog-faq-chevron">▼</span>
-            </button>
-            <div class="blog-faq-a">Cà phê rang, hạt mắc ca, sản phẩm OCOP, thổ cẩm và một số nông sản theo mùa là những lựa chọn phù hợp. Nên lựa chọn sản phẩm có bao bì, nguồn gốc và ngày sản xuất rõ ràng.</div>
-          </div>
-        </div>
-
-      </div><!-- .blog-article -->
-    </div><!-- .container -->
+      </div>
+    </div>
   </section>
 
   <!-- ============================================
