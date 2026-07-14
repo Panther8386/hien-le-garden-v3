@@ -2449,35 +2449,6 @@
     @media (max-width: 560px) { .gallery-masonry { columns: 1; } }
 
     /* ============================================
-       V3 — BOOKING AVAILABILITY
-    ============================================ */
-    .avail-status {
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      padding: 0.75rem 1rem;
-      border-radius: 10px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      margin-top: 0.75rem;
-      transition: all 0.3s ease;
-    }
-    .avail-available { background: rgba(16,185,129,0.1); color: #059669; border: 1px solid rgba(16,185,129,0.3); }
-    .avail-limited   { background: rgba(245,158,11,0.1); color: #D97706; border: 1px solid rgba(245,158,11,0.3); }
-    .avail-full      { background: rgba(239,68,68,0.1);  color: #DC2626; border: 1px solid rgba(239,68,68,0.3); }
-    .avail-checking  { background: var(--bg-secondary); color: var(--text-muted); border: 1px solid var(--border-subtle); }
-    .avail-dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      flex-shrink: 0;
-    }
-    .avail-available .avail-dot { background: #10B981; animation: pulse 1.5s infinite; }
-    .avail-limited .avail-dot   { background: #F59E0B; }
-    .avail-full .avail-dot      { background: #EF4444; }
-    .avail-checking .avail-dot  { background: var(--text-dim); animation: pulse 0.8s infinite; }
-    @keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.35} }
-
-    /* ============================================
        WEATHER FX — Floating Animation
     ============================================ */
     #weatherFx {
@@ -2680,10 +2651,7 @@
           <option>Phòng Tập Thể — 150.000đ/người</option>
         </select>
       </div>
-      <button class="booking-submit" id="availCheckBtn" onclick="checkAvailability()">Gửi Yêu Cầu Kiểm Tra Phòng →</button>
-    </div>
-    <div class="container" style="padding-top:0; padding-bottom:0.5rem;">
-      <div id="availStatus" style="display:none;"></div>
+      <button class="booking-submit" onclick="handleBooking()">Gửi Yêu Cầu Kiểm Tra Phòng →</button>
     </div>
   </section>
 
@@ -3823,35 +3791,13 @@
     // ============================================================
     // AVAILABILITY CHECKER (smart simulation)
     // ============================================================
-    function checkAvailability() {
-      const checkIn  = document.getElementById('checkIn').value;
+    function handleBooking() {
+      const checkIn = document.getElementById('checkIn').value;
       const checkOut = document.getElementById('checkOut').value;
-      const room     = document.getElementById('roomType').value;
-      const statusEl = document.getElementById('availStatus');
-      if (!room) {
-        statusEl.style.display = 'flex';
-        statusEl.className = 'avail-status avail-checking';
-        statusEl.innerHTML = '<span class="avail-dot"></span>Vui lòng chọn loại phòng để kiểm tra';
-        return;
-      }
-      // Show checking state
-      statusEl.style.display = 'flex';
-      statusEl.className = 'avail-status avail-checking';
-      statusEl.innerHTML = '<span class="avail-dot"></span>Đang kiểm tra phòng trống...';
-      // Simulate network latency
-      setTimeout(() => {
-        const ci = checkIn ? new Date(checkIn) : new Date();
-        const dow = ci.getDay();
-        const isWeekend = dow === 5 || dow === 6 || dow === 0;
-        const isHoliday = [/* peak dates */].some(d => ci.toISOString().startsWith(d));
-        if (isHoliday || (isWeekend && Math.random() > 0.35)) {
-          statusEl.className = 'avail-status avail-limited';
-          statusEl.innerHTML = '<span class="avail-dot"></span>Còn 1–2 phòng — Đặt sớm để giữ chỗ! <a href="https://zalo.me/0968987311" target="_blank" rel="noopener" style="margin-left:8px;color:inherit;text-decoration:underline">Xác nhận qua Zalo →</a>';
-        } else {
-          statusEl.className = 'avail-status avail-available';
-          statusEl.innerHTML = '<span class="avail-dot"></span>Còn phòng trống — Đặt ngay để nhận giá tốt nhất! <button onclick="openBookingModal()" style="margin-left:8px;background:none;border:none;color:inherit;text-decoration:underline;cursor:pointer;font:inherit">Đặt phòng →</button>';
-        }
-      }, 900);
+      const room = document.getElementById('roomType').value;
+      if (!room) { alert('Vui lòng chọn loại phòng!'); return; }
+      const msg = `Xin chào! Tôi muốn đặt phòng:\n- Phòng: ${room}\n- Nhận: ${checkIn}\n- Trả: ${checkOut}\nVui lòng xác nhận giúp tôi. Cảm ơn!`;
+      window.open(`https://www.facebook.com/p/Hi%E1%BB%81n-L%C3%AA-Garden-61556329706262/`, '_blank');
     }
 
     // ============================================================
