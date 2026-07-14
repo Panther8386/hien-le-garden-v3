@@ -877,46 +877,6 @@
     @media (max-width: 600px) { .rooms-grid { grid-template-columns: 1fr; } }
 
     /* ============================================
-       6. TIỆN ÍCH
-    ============================================ */
-    #amenities {
-      background: var(--bg-primary);
-    }
-    .amenities-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2rem;
-    }
-    .amenity-card {
-      text-align: center;
-      padding: 2rem 1rem;
-      border-radius: var(--radius-md);
-      border: 1px solid var(--border-subtle);
-      background: var(--bg-surface);
-      transition: border-color var(--transition), box-shadow var(--transition);
-    }
-    .amenity-card:hover {
-      border-color: var(--accent-gold);
-      box-shadow: 0 8px 24px rgba(26,83,58,0.08);
-    }
-    .amenity-icon {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
-      display: block;
-    }
-    .amenity-name {
-      font-family: var(--font-serif);
-      font-size: 1.05rem;
-      font-style: italic;
-      color: var(--text-primary);
-      margin-bottom: 0.35rem;
-    }
-    .amenity-desc { font-size: 0.78rem; color: var(--text-muted); line-height: 1.5; }
-
-    @media (max-width: 1024px) { .amenities-grid { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 480px) { .amenities-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; } }
-
-    /* ============================================
        7. TIMELINE TRẢI NGHIỆM
     ============================================ */
     #timeline {
@@ -2623,7 +2583,6 @@
     <ul class="nav-links">
       <li><a href="#about">Giới Thiệu</a></li>
       <li><a href="#rooms">Phòng</a></li>
-      <li><a href="#amenities">Tiện Ích</a></li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#reviews">Reviews</a></li>
       <li><a href="#blog">Cẩm Nang</a></li>
@@ -2652,7 +2611,6 @@
     <button class="nav-mobile-close" id="mobileClose">✕</button>
     <a href="#about">Giới Thiệu</a>
     <a href="#rooms">Phòng</a>
-    <a href="#amenities">Tiện Ích</a>
     <a href="#gallery">Gallery</a>
     <a href="#reviews">Reviews</a>
     <a href="#blog">Cẩm Nang</a>
@@ -2900,61 +2858,6 @@
           </div>
         </div>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================
-       5. TIỆN ÍCH
-  ============================================ -->
-  <section class="section" id="amenities">
-    <div class="container">
-      <div class="section-header fade-in">
-        <span class="label">Giá Trị · Values</span>
-        <h2>Mỗi Buổi Sáng Đều Đáng Để Thức Dậy.</h2>
-        <p>Chúng tôi không chỉ cung cấp tiện ích — chúng tôi gìn giữ những điều nhỏ bé khiến một buổi sáng trở nên thật sự đáng nhớ.</p>
-      </div>
-      <div class="amenities-grid">
-        <div class="amenity-card fade-in">
-          <span class="amenity-icon">🏔️</span>
-          <div class="amenity-name">View Hồ Panorama</div>
-          <div class="amenity-desc">Tầm nhìn 180° ra hồ thơ mộng — điểm check-in hot nhất Lâm Đồng</div>
-        </div>
-        <div class="amenity-card fade-in">
-          <span class="amenity-icon">🌸</span>
-          <div class="amenity-name">Vườn Hoa Cỏ May</div>
-          <div class="amenity-desc">Bãi hoa cỏ may rực rỡ theo mùa - khung cảnh nên thơ lý tưởng cho ảnh cưới & check-in.</div>
-        </div>
-        <div class="amenity-card fade-in">
-          <span class="amenity-icon">🔥</span>
-          <div class="amenity-name">Campfire & Glamping</div>
-          <div class="amenity-desc">Đốt lửa trại, cắm trại qua đêm dưới bầu trời đầy sao</div>
-        </div>
-        <div class="amenity-card fade-in">
-          <span class="amenity-icon">☕</span>
-          <div class="amenity-name">Cà Phê Giữa Vườn</div>
-          <div class="amenity-desc">Thưởng thức cà phê Ban Mê giữa không gian xanh mát</div>
-        </div>
-        <div class="amenity-card fade-in">
-          <span class="amenity-icon">👥</span>
-          <div class="amenity-name">Team Building</div>
-          <div class="amenity-desc">Tổ chức sự kiện, team building từ 20–100 người với đầy đủ tiện nghi</div>
-        </div>
-        <div class="amenity-card fade-in">
-          <span class="amenity-icon">📸</span>
-          <div class="amenity-name">Không gian chụp ảnh giữa thiên nhiên</div>
-          <div class="amenity-desc">Hàng chục góc check-in độc đáo với phong cảnh thiên nhiên</div>
-        </div>
-        <div class="amenity-card fade-in">
-          <span class="amenity-icon">🌱</span>
-          <div class="amenity-name">Nông Nghiệp Trải Nghiệm</div>
-          <div class="amenity-desc">Trồng rau, hái trái cây, trải nghiệm nông nghiệp sạch</div>
-        </div>
-        <div class="amenity-card fade-in">
-          <span class="amenity-icon">🎠</span>
-          <div class="amenity-name">Khu Vui Chơi Trẻ Em</div>
-          <div class="amenity-desc">Khu vui chơi an toàn miễn phí cho bé, ba mẹ thư giãn</div>
-        </div>
       </div>
     </div>
   </section>
@@ -3481,12 +3384,12 @@
       <div>
         <div class="footer-heading">Dịch Vụ</div>
         <ul class="footer-links">
-          <li><a href="#amenities">Campfire & Glamping</a></li>
-          <li><a href="#amenities">Team Building</a></li>
-          <li><a href="#amenities">Cà Phê Vườn</a></li>
-          <li><a href="#amenities">Nông Nghiệm</a></li>
-          <li><a href="#amenities">Khu Vui Chơi</a></li>
-          <li><a href="#amenities">Không gian chụp ảnh giữa thiên nhiên</a></li>
+          <li><a href="bang-gia/">Campfire & Glamping</a></li>
+          <li><a href="bang-gia/">Team Building</a></li>
+          <li><a href="bang-gia/">Cà Phê Vườn</a></li>
+          <li><a href="bang-gia/">Nông Nghiệm</a></li>
+          <li><a href="bang-gia/">Khu Vui Chơi</a></li>
+          <li><a href="bang-gia/">Không gian chụp ảnh giữa thiên nhiên</a></li>
         </ul>
       </div>
       <div>
